@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap"rel="stylesheet">
+    <link rel="stylesheet" href="anglais.css"> 
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title> Climat Azure || T10 project </title>
+</head>
+<body>
+    <header class="header">
+        <div class="navbar">
+            <div class="logo">
+                <a href="about.html">
+                    <img src="téléchargement2.png" alt="logo">
+                </a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="ClimatAzure.html">Home</a></li>
+                    <li><a href="meteo.html">Meteo</a></li>
+                    <li><a href="climat.html">Climat</a></li>
+					<li><a href="anglais.html">En.</a></li>
+                </ul>
+            </div>
+            <div class="login">
+                <a href="login.html"><button class="btnLogin-popup">Connexion</button></a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h2>Impacts of global warming, <br><b> What is about the Climate crisis? </b> </h2>
+        <h1 id="source">
+			<a class="typewrite" data-period="2000" data-type='["for 2.5 million years the Earth s", "climate has fluctuated cycling from ice", "ages to warmer periods but in the last", "century the planets temperature has", "risen unusually fast"," about 1.2 to 1.4", "degrees Fahrenheit scientists believe", "it s human activity that s driving the","temperatures up a process known as", "global warming", "ever since the industrial revolution", "began factories power plants and", "eventually cars have burned fossil fuels", "such as oil and pull releasing huge", "amounts of carbon dioxide and other","gases into the atmosphere these","greenhouse gases trap heat near the","earth through a naturally occurring", "process called the greenhouse effect the", "greenhouse effect begins with the Sun", "and the energy it radiates to the earth", "the earth and the atmosphere absorbs", "some of this energy while the rest is", "radiated back into space","naturally-occurring gases in the","atmosphere trap some of this energy and", "reflected back warming the earth", "scientists now believe that the", "greenhouse effect is being intensified","by the extra greenhouse gases that", "humans have released evidence for global", "warming includes a recent string of very","warm years scientists report that 1998","was the warmest year in measured history", "with 2005 coming in second meanwhile","readings taken from ice cores show that", "The greenhouse gases carbon dioxide and", "methane have hit their highest levels in","the past 420 thousand years", "Arctic sea ice is also shrinking","according to NASA studies the extent of","Arctic sea ice has declined about 10", "percent in the last 30 years as long as", "industrialized nations consume energy","and developing countries increase their", "fossil fuel consumption"] '><span class="wrap"></span></a>
+		</h1>
+		<script>
+			//https://css-tricks.com/snippets/css/typewriter-effect/ seul balise script copié
+		var TxtType = function(el, toRotate, period) {
+				this.toRotate = toRotate;
+				this.el = el;
+				this.loopNum = 0;
+				this.period = parseInt(period, 10) || 2000;
+				this.txt = '';
+				this.tick();
+				this.isDeleting = false;
+			};
+
+		TxtType.prototype.tick = function() {
+			var i = this.loopNum % this.toRotate.length;
+			var fullTxt = this.toRotate[i];
+				if (this.isDeleting) {
+				this.txt = fullTxt.substring(0, this.txt.length - 1);
+				} else {
+				this.txt = fullTxt.substring(0, this.txt.length + 1);
+				}
+
+				this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+				var that = this;
+				var delta = 200 - Math.random() * 100;
+
+				if (this.isDeleting) { delta /= 2; }
+
+				if (!this.isDeleting && this.txt === fullTxt) {
+				delta = this.period;
+				this.isDeleting = true;
+				} else if (this.isDeleting && this.txt === '') {
+				this.isDeleting = false;
+				this.loopNum++;
+				delta = 500;
+				}
+
+				setTimeout(function() {
+				that.tick();
+				}, delta);
+			};
+
+			window.onload = function() {
+				var elements = document.getElementsByClassName('typewrite');
+				for (var i=0; i<elements.length; i++) {
+					var toRotate = elements[i].getAttribute('data-type');
+					var period = elements[i].getAttribute('data-period');
+						if (toRotate) {
+					new TxtType(elements[i], JSON.parse(toRotate), period);
+					}
+				}
+		};
+		</script>
+    </main>    
+</body>
+</html>

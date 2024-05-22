@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="meteo.css"> 
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="meteo3.js"></script>
+    <title> Climat Azure || T10 project </title>
+</head>
+<body>
+    <header class="header">
+        <div class="navbar">
+            <div class="logo">
+                <a href="about.html">
+                    <img src="téléchargement2.png" alt="logo">
+                </a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="ClimatAzure.html">Home</a></li>
+                    <li><a href="meteo.html">Meteo</a></li>
+                    <li><a href="climat.html">Climat</a></li>
+                    <li><a href="anglais.html">En.</a></li>
+                </ul>
+            </div>
+            <div class="login">
+                <a href="login.html">
+                    <button class="btnLogin-popup">Connexion</button>
+                </a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="left-info">
+                <div class="pic-gradient"></div> 
+                <div class="today-info">
+                    <h2 class="jour">x</h2>
+                    <span class="date">x</span>
+                    <div>
+                        <i class='bx bx-current-location'></i>
+                        <span class="region">x</span>
+                    </div>
+                </div>
+                <div class="today-weather">  
+                    <i id="emoji" class='bx bx-sun' style="color: aliceblue;"></i>
+                    <h1 class="description"><span class="temp">x°</span>
+                    </h1>
+                    <h3 class="description"><span class="desc">x</span></h3>
+                </div>
+            </div>
+            <div class="right-info">
+                <div class="day-info">
+                    <div class="rain">
+                        <span class="title">PRESSION</span>
+                        <span class="prec">xhPa</span>
+                    </div>
+                    <div class="rain">
+                        <span class="title">MERCURE</span>
+                        <span class="merc">xmmHg</span>
+                    </div>
+                    <div class="humidity">
+                        <span class="title">HUMIDITE</span>
+                        <span class="hum">x%</span>
+                    </div>
+                    <div class="wind">
+                        <span class="title">VITESSE DU VENT</span>
+                        <span class="win">x km/h</span>
+                    </div>
+                </div>
+                <ul class="days-list">
+                    <li>
+                        <i class='bx bx-cloud'></i>
+                        <span class="Saturday">x</span>
+                        <span class="days-temp">27°</span>
+                    </li>
+                    <li>
+                        <i class='bx bx-cloud-light-rain'></i>
+                        <span class="Sunday">x</span>
+                        <span class="days-temp">23°</span>
+                    </li>
+                    <li>
+                        <i class='bx bx-cloud-snow'></i>
+                        <span class="Monday">x</span>
+                        <span class="days-temp">26°</span>
+                    </li>
+                    <li>
+                        <i class='bx bx-cloud-drizzle'></i>
+                        <span class="Thuesday">x</span>
+                        <span class="days-temp">28°</span>
+                    </li>
+                </ul>
+                <div class="btn-box">
+                    <form class="search-box" onsubmit="return false;">
+                        <input type="texe" class="cityImput" placeholder="Localisation">
+                        <button onclick="getCity()"><i class='bx bx-search-alt-2'></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="error_404">
+            <a class="typewrite" data-period="2000" data-type='[ "La localisation que vous venez de chercher et indisponible", "veuillez réessayer", "le lieux demandé est introuvable", "testez une nouvelle localisation"]'><span class="wrap"></span></a>
+        </div>
+    </main>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</body>
+</html>
