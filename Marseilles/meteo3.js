@@ -123,65 +123,65 @@ function displayWeatherInfo(data){
 }
 
 function displayEmoji(weatherid){
-    alert(weatherid);
     var emoji = document.getElementById("emoji");
-    switch(weatherid){
-        case(weatherid >= 200 && weatherid < 300): 
-            emoji.className = 'bx bx-cloud-lightning';
-            return; 
-        case(weatherid >= 300 && weatherid < 400):
-            emoji.className = 'bx bx-cloud-drizzle';
-            return; 
-        case(weatherid >= 500 && weatherid < 600): 
-            emoji.className = 'bx bx-cloud-rain';
-            return;   
-        case(weatherid >= 600 && weatherid < 700): 
-            emoji.className = 'bx bx-cloud-snow';
-            return; 
-        case(weatherid >= 700 && weatherid < 800):
-            emoji.className = 'bx bx-water'; 
-            return;   
-        case(weatherid = 800): 
-            emoji.className = 'bx bx-sun';
-            return 'bx bx-sun';
-        case(weatherid >= 801 && weatherid < 810 ): 
-            emoji.className = 'bx bx-cloud';
-            return;
-        default: 
-            emoji.className = 'bx bx-message-alt-x';
-            return;
+    if(weatherid >= 200 && weatherid < 300){ 
+        emoji.className = 'bx bx-cloud-lightning'; 
+        return;   
+    }
+    if(weatherid >= 300 && weatherid < 400){
+        emoji.className = 'bx bx-cloud-drizzle';
+        return;
+    } 
+    if(weatherid >= 500 && weatherid < 600){ 
+        emoji.className = 'bx bx-cloud-rain';
+        return;   
+    }
+    if(weatherid >= 600 && weatherid < 700){ 
+        emoji.className = 'bx bx-cloud-snow';
+        return; 
+    }
+    if(weatherid >= 700 && weatherid < 800){
+        emoji.className = 'bx bx-water'; 
+        return;  
+    } 
+    if(weatherid >= 801 && weatherid < 810){
+        emoji.className = 'bx bx-cloud'; 
+        return; 
+    }   
+    if(weatherid = 800){
+        emoji.className = 'bx bx-sun';
+    }
+    else{
+        emoji.className = ''; 
     }
 }
 function displayBackground(ville=""){ 
     var background = document.querySelector(".left-info");
+    background.style.backgroundImage =  "url('https://i.pinimg.com/564x/48/34/81/4834810ed95b89335cdf3e06c33b031d.jpg')"; 
     switch (ville){
         case 'Arrondissement de Nice':
             background.style.backgroundImage = "url(Nice.gif)";
-            return;
+            break;
 
         case 'Arrondissement de Marseille':
-            background.style.backgroundImage = "url('https://i.pinimg.com/564x/48/34/81/4834810ed95b89335cdf3e06c33b031d.jpg')";
-            return;
+            background.style.backgroundImage = "url('Marseilles.gif')";
+            break;
 
         case 'Cannes':
             background.style.backgroundImage = "url('Cannes.gif')";
-            return;
+            break;
 
         case 'Saint Tropez':
             background.style.backgroundImage = "url('Sainttropez.gif')";
-            return;
+            break;
 
         case 'Menton':
             background.style.backgroundImage = "url('Menton.gif')";
-            return;
+            break;
 
         case 'Èze':
             background.style.backgroundImage = "url('Eze.gif')";
-            return;
-        case '': 
-            return "url('https://i.pinimg.com/564x/48/34/81/4834810ed95b89335cdf3e06c33b031d.jpg')";
-        default: 
-            return "#232931"; 
+            break; 
     }
 }
 
